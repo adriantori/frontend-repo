@@ -3,13 +3,12 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id",
-  measurementId: "your-measurement-id"
+  apiKey: "AIzaSyDR9jMyh32jyww54wAn2G4vHMEhSEAeqsY",
+  authDomain: "ebuddy-11b3e.firebaseapp.com",
+  projectId: "ebuddy-11b3e",
+  storageBucket: "ebuddy-11b3e.appspot.com",
+  messagingSenderId: "860914138673",
+  appId: "1:860914138673:web:548fd76d01382109d0df10"
 };
 
 const app = initializeApp(firebaseConfig);

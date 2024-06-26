@@ -1,4 +1,4 @@
-// app/layout.tsx
+// layouts/RootLayout.tsx
 "use client";
 
 import React from 'react';
@@ -7,7 +7,7 @@ import store from '../store/store';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme/theme';
-import { AuthProvider } from '@/context/AuthContext';
+import { AuthProvider } from '../context/AuthContext';
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

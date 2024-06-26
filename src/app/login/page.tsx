@@ -1,15 +1,14 @@
-// app/login/page.tsx
 "use client";
 
 import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { TextField, Button, Typography } from '@mui/material';
+import { TextField, Button, Typography, Box, CircularProgress } from '@mui/material';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useAuth();
+  const { login, loading } = useAuth();
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -23,9 +22,11 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <Typography variant="h4">Login</Typography>
-      <form onSubmit={handleSubmit}>
+    <Box display="flex" justifyContent="center" alignItems="center" height="100vh" flexDirection="column">
+      <Typography variant="h4" gutterBottom>
+        Login
+      </Typography>
+      <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: '400px' }}>
         <TextField
           label="Email"
           type="email"
@@ -44,11 +45,11 @@ const LoginPage: React.FC = () => {
           fullWidth
           margin="normal"
         />
-        <Button type="submit" variant="contained" color="primary">
-          Login
+        <Button type="submit" variant="contained" color="primary" fullWidth disabled={loading}>
+          {loading ? <CircularProgress size={24} /> : 'Login'}
         </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 
