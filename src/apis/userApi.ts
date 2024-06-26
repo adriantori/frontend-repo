@@ -1,9 +1,7 @@
-// apis/userApi.ts
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:5001/ebuddy-11b3e/us-central1/api/api';
 
-// Function to get token from localStorage
 const getToken = () => localStorage.getItem('token');
 
 export const fetchUserData = async () => {

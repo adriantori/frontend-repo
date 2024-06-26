@@ -34,11 +34,11 @@ const HomePage: React.FC = () => {
       const response = await updateUserData({ userId: '1', username: newUsername });
 
       if (response) {
-        dispatch(setUserData(response)); // Update user data in Redux store
+        dispatch(setUserData(response));
         setUpdateSuccess(true);
         setUpdateError('');
-        setUsername(newUsername); // Update the displayed username
-        setNewUsername(''); // Clear the input field after successful update
+        setUsername(newUsername);
+        setNewUsername('');
       }
     } catch (error) {
       console.error('Error updating username:', error);
